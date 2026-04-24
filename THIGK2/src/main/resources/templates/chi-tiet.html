@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi Tiết Tin</title>
+</head>
+<body>
+    <h1 th:text="${tin.tieuDe}">Tiêu đề bài viết</h1>
+    
+    <p><strong>Thuộc thể loại: </strong> <span th:text="${tin.theLoai.tenTheLoai}"></span></p>
+    
+    <hr>
+    
+    <h3>Nội dung:</h3>
+    <p th:text="${tin.noiDung}">Nội dung chi tiết của bản tin sẽ hiện ở đây...</p>
+    
+    <br><br>
+    <a href="/tin-tuc"><button>Quay lại danh sách</button></a>
+</body>
+</html>

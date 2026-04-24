@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang Tin Tức</title>
+</head>
+<body>
+    <h1>CHUYÊN TRANG TIN TỨC</h1>
+    
+    <h3>Menu Thể Loại</h3>
+    <ul>
+        <li><a href="/tin-tuc">Tất cả tin tức</a></li>
+        <li th:each="tl : ${dsTheLoai}">
+            <a th:href="@{'/the-loai/' + ${tl.id}}" th:text="${tl.tenTheLoai}"></a>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h3>Danh Sách Bản Tin</h3>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Mã Tin</th>
+            <th>Tiêu đề</th>
+            <th>Thể loại</th>
+            <th>Hành động</th>
+        </tr>
+        <tr th:each="tin : ${dsTin}">
+            <td th:text="${tin.id}"></td>
+            <td th:text="${tin.tieuDe}"></td>
+            <td th:text="${tin.theLoai.tenTheLoai}"></td>
+            <td><a th:href="@{'/chi-tiet/' + ${tin.id}}">Xem chi tiết</a></td>
+        </tr>
+    </table>
+</body>
+</html>
