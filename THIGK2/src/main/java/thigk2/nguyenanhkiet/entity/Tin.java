@@ -5,11 +5,14 @@ import lombok.*;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Tin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String tieuDe;
+    @Column(columnDefinition = "TEXT")
     private String noiDung;
 
     @ManyToOne

@@ -5,6 +5,8 @@ import lombok.*;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class NguoiDung {
     @Id
     private String username;
